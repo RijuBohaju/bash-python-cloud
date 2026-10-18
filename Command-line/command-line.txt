@@ -1,0 +1,28 @@
+To check the directory that i am in : pwd
+To check the existing file in the directory: ls -l
+To move between the directories: cd folder_name
+To create a directory: mkdir folder_name
+To create a file: touch filename.txt
+To write: Echo "Hello World!"
+To read the file: cat filename.txt
+To copy from one file to another: cp file1.txt copy.txt
+To rename/move the file: mv file1.txt backup.txt
+To delete the file: rm filename.txt
+To quit/exit: q
+To create several level of folders: mkdir -p folder1/folder2/folder3
+To display the beginning of file and can specify how many lines: head -n 2 filename.txt
+To display end of file and can specify lines: tail -n 2 file.txt
+To read a file page by page: less filename.txt
+To change the permission: chmod : r: Read, w: Write, x:Execute
+To check the permission of file: ls -l hello.sh
+To change ownership: sudo chown username app.conf
+To change owner and group: sudo chown username:groupname app.conf
+To show running processes: ps
+To show more processes: ps aux
+To monitor the system: top
+To stop the process: kill
+To create a shell/bash script: nana hello.sh
+To execute the script: bash hello.sh
+
+#Service & Logs
+
