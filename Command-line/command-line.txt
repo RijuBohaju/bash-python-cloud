@@ -1,28 +1,127 @@
-To check the directory that i am in : pwd
-To check the existing file in the directory: ls -l
-To move between the directories: cd folder_name
-To create a directory: mkdir folder_name
-To create a file: touch filename.txt
-To write: Echo "Hello World!"
-To read the file: cat filename.txt
-To copy from one file to another: cp file1.txt copy.txt
-To rename/move the file: mv file1.txt backup.txt
-To delete the file: rm filename.txt
+To check the directory that i am in : 
+ pwd
+
+To check the existing file in the directory:
+ ls -l 
+ 
+To move between the directories:
+ cd folder_name
+
+To create a directory:
+ mkdir folder_name
+
+To create a file: 
+ touch filename.txt
+
+To write: 
+ echo "Hello World!"
+
+To read the file: 
+ cat filename.txt
+
+To copy from one file to another: 
+ cp file1.txt copy.txt
+
+To rename/move the file: 
+ mv file1.txt backup.txt
+
+To delete the file: 
+ rm filename.txt
+
 To quit/exit: q
-To create several level of folders: mkdir -p folder1/folder2/folder3
-To display the beginning of file and can specify how many lines: head -n 2 filename.txt
-To display end of file and can specify lines: tail -n 2 file.txt
-To read a file page by page: less filename.txt
-To change the permission: chmod : r: Read, w: Write, x:Execute
-To check the permission of file: ls -l hello.sh
-To change ownership: sudo chown username app.conf
-To change owner and group: sudo chown username:groupname app.conf
+
+To create several level of folders: 
+ mkdir -p folder1/folder2/folder3
+
+To display the beginning of file and can specify how many lines: 
+ head -n 2 filename.txt
+
+To display end of file and can specify lines: 
+ tail -n 2 file.txt
+
+To read a file page by page: 
+ less filename.txt
+
+To change the permission: 
+ chmod : r: Read, w: Write, x:Execute
+
+To check the permission of file: 
+ ls -l hello.sh
+
+To change ownership: 
+ sudo chown username app.conf
+
+To change owner and group: 
+ sudo chown username:groupname app.conf
+
 To show running processes: ps
+
 To show more processes: ps aux
+
 To monitor the system: top
+
 To stop the process: kill
-To create a shell/bash script: nana hello.sh
-To execute the script: bash hello.sh
 
-#Service & Logs
+To create a shell/bash script: 
+ nana hello.sh
 
+To execute the script: 
+ bash hello.sh
+
+#Service & Logs 
+To check server:
+ systemctl status SERVICE
+ 
+To start the service:
+ sudo systemctl start ssh
+ 
+To stop the service:
+ sudo systemctl stop SERVICE
+ 
+To restart the service: Why restart? = When you change the configuration you have to restart so that the service can load new configuration.
+ sudo systemctl restart SERVICE
+
+To start the service automatically:
+ sudo systemctl enable SERVICE
+ 
+Start and enable can be combined: Enable it for future boots and start it now
+ sudo systemctl enable --now ssh
+ 
+#Read Logs
+To read the logs: journalctl
+
+To show the last 20 logs:
+ journalctl -n 20
+ 
+To continuously display new log entries as they open: click ctrl + c to exit
+ hournalctl -f
+ 
+To display logs for specific services:
+ jouranlctl -u ssh
+ journalctl -u ssh -n 50
+ 
+ 
+#Linux Networking
+
+To find your address:
+ ip addr
+ 
+For clear output:
+ ip -br addr
+
+To see your routing info:
+ ip route
+ 
+To test connectivity:
+ ping
+ eg: ping google.com
+     ping 194.128.1.24
+     
+To see the network connection and ports:
+ ss -tuln
+
+To convert DNS into an ip address:
+ nslookup google.com
+ 
+For more detailed DNS info:
+ dig google.com
