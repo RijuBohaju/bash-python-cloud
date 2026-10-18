@@ -4,6 +4,24 @@ To check the directory that i am in :
 To check the existing file in the directory:
  ls -l 
  
+To display the linux username:
+ whoami
+ 
+To display date:
+ date
+ 
+To display the hostname:
+ hostname
+ 
+To display calendar:
+ cal
+ 
+To Show previously executed commands
+ history
+ 
+To display system information
+ uname -a
+ 
 To move between the directories:
  cd folder_name
 
@@ -22,6 +40,24 @@ To read the file:
 To copy from one file to another: 
  cp file1.txt copy.txt
 
+To copy folder:
+ cp -r folder1 folder2
+
+To find the file or script: find
+ find . -name "*.sh"   :to find all the available shell scripts
+
+To search a logs for errors:
+ grep -i "error" app.log
+ 
+To count lines:
+ wc -l file.txt
+ 
+To sort lines:
+ sort filename.txt
+ 
+To remove adjacent duplicate lines:
+ sort names.txt | uniq
+ 
 To rename/move the file: 
  mv file1.txt backup.txt
 
