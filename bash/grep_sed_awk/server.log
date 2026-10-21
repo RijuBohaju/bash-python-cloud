@@ -1,0 +1,9 @@
+INFO Server started
+INFO User logged in
+ERROR Database connection failed
+INFO Request completed
+ERROR Disk space is low
+WARNING High memory usage
+INFO Backup completed
+ERROR Authentication failed
+	

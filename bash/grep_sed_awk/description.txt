@@ -1,0 +1,79 @@
+grep — Search for specific text in files.
+sed — Find and replace text or modify text streams.
+awk — Extract, filter, and process structured text, including columns.
+
+A) For grep:
+Syntax: grep "find" server.log
+ grep -i "find" server.log
+ => here -i => option makes the search case in-sensitive
+ 
+ grep -n "find" server.log 
+ => -n finds where the error occured.
+ 
+  grep -c "find" server.log 
+ => -c how many errors in the file
+ 
+ grep -v "find" server.log 
+ => Use -v to display lines that do not contain a specified pattern
+ 
+ grep -r "find" ~/bash/grep_sed_awk
+ -r option searches files recursively.
+ 
+ B) sed
+ 1) sed 's/old.example.com/new.example.com/' config.txt
+
+The important part is:
+s/old.example.com/new.example.com/
+
+It means:
+- s — substitute.
+- old.example.com — the text to find.
+- new.example.com — the replacement text.
+
+2) sed 's/error/ERROR/' messages.txt
+
+Output:
+ERROR error error
+Only the first matching occurrence on that line was replaced.
+
+3) To replace every occurrence on each line, add g: g means global replacement
+sed 's/error/ERROR/g' messages.txt
+Output:
+ERROR ERROR ERROR
+
+4) Suppose you want to display only line 3:
+ sed -n '3p' config.txt
+ 
+ 5) To display lines 2 through 4:
+sed -n '2,4p' config.txt
+
+6) Delete lines from output
+Suppose you want to exclude lines containing INFO:
+sed '/INFO/d' server.log
+
+Here, d means delete the matching lines from the output.
+
+C) Awk
+=> awk is a text-processing language designed to work particularly well with structured text.
+
+It can:
+- Extract columns.
+- Filter rows.
+- Perform calculations.
+- Count matching records.
+- Format output.
+- Process command output and log files.
+
+eg: awk '{print $1}' awk.txt
+
+- awk starts the text-processing tool.
+- {print $1} tells it to print the first field.
+- awk.txt is the input file.
+
+awk '{print $1, $3}' awk.txt : it prints the first and 3rd field
+awk '$3 > 5000 {print $1, $3}' awk.txt
+awk '{total += $3} END {print "Total:", total}' awk.txt
+
+Not all files separate fields using spaces.
+Consider a CSV file:
+awk -F',' 'NR > 1 {print $1}' employees.csv
